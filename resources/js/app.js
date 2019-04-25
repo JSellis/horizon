@@ -22,8 +22,8 @@ window.Popper = require('popper.js').default;
 moment.tz.setDefault(Horizon.timezone);
 
 Vue.prototype.$http = axios.create({
-    baseURL: 'basV3/'
-})
+    baseURL: '/basV3/'
+});
 
 const router = new VueRouter({
     routes: Routes,
