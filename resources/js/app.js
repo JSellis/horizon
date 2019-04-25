@@ -21,12 +21,14 @@ window.Popper = require('popper.js').default;
 
 moment.tz.setDefault(Horizon.timezone);
 
-Vue.prototype.$http = axios.create();
+Vue.prototype.$http = axios.create({
+    baseURL: 'basV3/'
+})
 
 const router = new VueRouter({
     routes: Routes,
     mode: 'history',
-    base: '/' + window.Horizon.path + '/',
+    base: '/basV3/' + window.Horizon.path + '/',
 });
 
 Vue.component('vue-json-pretty', VueJsonPretty);
