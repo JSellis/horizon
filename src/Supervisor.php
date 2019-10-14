@@ -2,19 +2,19 @@
 
 namespace Laravel\Horizon;
 
+use Cake\Chronos\Chronos;
 use Closure;
 use Exception;
-use Throwable;
-use Cake\Chronos\Chronos;
-use Laravel\Horizon\Contracts\Pausable;
-use Laravel\Horizon\Contracts\Terminable;
-use Laravel\Horizon\Contracts\Restartable;
-use Laravel\Horizon\Events\SupervisorLooped;
+use Illuminate\Contracts\Cache\Factory as CacheFactory;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Laravel\Horizon\Contracts\HorizonCommandQueue;
+use Laravel\Horizon\Contracts\Pausable;
+use Laravel\Horizon\Contracts\Restartable;
 use Laravel\Horizon\Contracts\SupervisorRepository;
-use Illuminate\Contracts\Cache\Factory as CacheFactory;
+use Laravel\Horizon\Contracts\Terminable;
+use Laravel\Horizon\Events\SupervisorLooped;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Throwable;
 
 class Supervisor implements Pausable, Restartable, Terminable
 {
@@ -404,16 +404,6 @@ class Supervisor implements Pausable, Restartable, Terminable
     public function totalProcessCount()
     {
         return $this->processPools->sum->totalProcessCount();
-    }
-
-    /**
-     * Get CPU and memory usage for the active workers by asking the OS.
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function workerStats()
-    {
-        return app(SystemProcessCounter::class)->getWorkerStats($this->name);
     }
 
     /**

@@ -1,6 +1,81 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v3.2.1...3.0)
+## [Unreleased](https://github.com/laravel/horizon/compare/v3.4.1...3.0)
+
+
+## [v3.4.1 (2019-10-08)](https://github.com/laravel/horizon/compare/v3.4.0...v3.4.1)
+
+### Fixed
+- Fix pagination for recent jobs ([#678](https://github.com/laravel/horizon/pull/678))
+
+
+## [v3.4.0 (2019-10-01)](https://github.com/laravel/horizon/compare/v3.3.2...v3.4.0)
+
+### Added
+- Filter recent jobs by tag ([#665](https://github.com/laravel/horizon/pull/665))
+
+
+## [v3.3.2 (2019-08-27)](https://github.com/laravel/horizon/compare/v3.3.1...v3.3.2)
+
+### Fixed
+- Fix worker command binding ([3b53310](https://github.com/laravel/horizon/commit/3b533104caa299761ce6a1c41438bdab1e2e246f))
+
+
+## [v3.3.1 (2019-08-20)](https://github.com/laravel/horizon/compare/v3.3.0...v3.3.1)
+
+### Fixed
+- Fix autobalancer ([#651](https://github.com/laravel/horizon/pull/651))
+
+
+## [v3.3.0 (2019-08-13)](https://github.com/laravel/horizon/compare/v3.2.8...v3.3.0)
+
+### Added
+- Allow custom dashboard failed jobs metric period ([#644](https://github.com/laravel/horizon/pull/644))
+
+
+## [v3.2.8 (2019-08-06)](https://github.com/laravel/horizon/compare/v3.2.7...v3.2.8)
+
+### Fixed
+- Forcing Vue to use the X-Requested-With header, set to XMLHttpRequest ([#642](https://github.com/laravel/horizon/pull/642))
+
+
+## [v3.2.7 (2019-07-30)](https://github.com/laravel/horizon/compare/v3.2.6...v3.2.7)
+
+### Changed
+- Updated version constraints for Laravel 6.0 ([b547cb2](https://github.com/laravel/horizon/commit/b547cb2a3668d3e83a3bc9ecac3aab67873c330c))
+
+
+## [v3.2.6 (2019-07-11)](https://github.com/laravel/horizon/compare/v3.2.5...v3.2.6)
+
+### Fixed
+- Correct dashboard "Failed Jobs Past 7 Days" metric ([#633](https://github.com/laravel/horizon/pull/633))
+
+
+## [v3.2.5 (2019-07-02)](https://github.com/laravel/horizon/compare/v3.2.4...v3.2.5)
+
+### Fixed
+- Adjust auto scaling to always use the max processes ([#627](https://github.com/laravel/horizon/pull/627))
+
+
+## [v3.2.4 (2019-06-25)](https://github.com/laravel/horizon/compare/v3.2.3...v3.2.4)
+
+### Fixed
+- Custom MasterSupervisor name breaks dashboard ([#619](https://github.com/laravel/horizon/pull/619))
+
+
+## [v3.2.3 (2019-06-14)](https://github.com/laravel/horizon/compare/v3.2.2...v3.2.3)
+
+### Fixed
+- Reverted "Display worker CPU and memory utilization in supervisor list" ([#616](https://github.com/laravel/horizon/pull/616), [#614](https://github.com/laravel/horizon/pull/614))
+
+
+## [v3.2.2 (2019-06-04)](https://github.com/laravel/horizon/compare/v3.2.1...v3.2.2)
+
+### Changed
+- Add app name to dashboard ([#605](https://github.com/laravel/horizon/pull/605))
+
+### Fixed
+- Properly format numeric values ([#606](https://github.com/laravel/horizon/pull/606))
 
 
 ## [v3.2.1 (2019-05-21)](https://github.com/laravel/horizon/compare/v3.2.0...v3.2.1)

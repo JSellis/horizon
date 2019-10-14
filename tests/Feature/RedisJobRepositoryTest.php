@@ -3,9 +3,9 @@
 namespace Laravel\Horizon\Tests\Feature;
 
 use Exception;
+use Laravel\Horizon\Contracts\JobRepository;
 use Laravel\Horizon\JobPayload;
 use Laravel\Horizon\Tests\IntegrationTest;
-use Laravel\Horizon\Contracts\JobRepository;
 
 class RedisJobRepositoryTest extends IntegrationTest
 {
@@ -41,6 +41,6 @@ class RedisJobRepositoryTest extends IntegrationTest
 
         $result = $repository->getRecent()[0];
 
-        $this->assertNotContains(',', $result->reserved_at);
+        $this->assertStringNotContainsString(',', $result->reserved_at);
     }
 }

@@ -1,7 +1,10 @@
 {
     "name": "laravel/horizon",
     "description": "Dashboard and code-driven configuration for Laravel queues.",
-    "keywords": ["laravel", "queue"],
+    "keywords": [
+        "laravel",
+        "queue"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,22 +18,18 @@
         "ext-pcntl": "*",
         "ext-posix": "*",
         "cakephp/chronos": "^1.0",
-        "illuminate/contracts": "~5.7.0|~5.8.0|~5.9.0",
-        "illuminate/queue": "~5.7.0|~5.8.0|~5.9.0",
-        "illuminate/support": "~5.7.0|~5.8.0|~5.9.0",
+        "illuminate/contracts": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "illuminate/queue": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "predis/predis": "^1.1",
         "ramsey/uuid": "^3.5",
         "symfony/process": "^4.2",
         "symfony/debug": "^4.2"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
-        "orchestra/testbench": "^3.7",
-        "phpunit/phpunit": "^7.0",
-        "predis/predis": "^1.1"
-    },
-    "suggest": {
-        "ext-redis": "Required to use the Redis PHP driver.",
-        "predis/predis": "Required when not using the Redis PHP driver (^1.1)."
+        "orchestra/testbench": "^3.7|^4.0|^5.0",
+        "phpunit/phpunit": "^7.0|^8.0"
     },
     "autoload": {
         "psr-4": {
@@ -44,7 +43,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0-dev"
+            "dev-master": "3.0-dev"
         },
         "laravel": {
             "providers": [
