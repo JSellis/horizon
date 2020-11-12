@@ -1,6 +1,182 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v3.1.1...3.0)
+## [Unreleased](https://github.com/laravel/horizon/compare/v3.7.2...3.0)
+
+
+## [v3.7.2 (2020-02-25)](https://github.com/laravel/horizon/compare/v3.7.1...v3.7.2)
+
+### Fixed
+- Use provided timezone for delay due ([aa69357](https://github.com/laravel/horizon/commit/aa6935737c093c9abae26f7ebe16980b4b7803e9))
+
+
+## [v3.7.1 (2020-02-18)](https://github.com/laravel/horizon/compare/v3.7.0...v3.7.1)
+
+### Fixed
+- Use 'default' connection as a default redis connection ([#765](https://github.com/laravel/horizon/pull/765))
+
+
+## [v3.7.0 (2020-02-14)](https://github.com/laravel/horizon/compare/v3.6.1...v3.7.0)
+
+### Added
+- Ability to see if a job is delayed ([#755](https://github.com/laravel/horizon/pull/755))
+- Allow trimming of completed jobs ([#720](https://github.com/laravel/horizon/pull/720))
+
+
+## [v3.6.1 (2020-02-12)](https://github.com/laravel/horizon/compare/v3.6.0...v3.6.1)
+
+### Fixed
+- Fix wrong value for failedJobs periods ([#757](https://github.com/laravel/horizon/pull/757))
+
+
+## [v3.6.0 (2020-02-04)](https://github.com/laravel/horizon/compare/v3.5.0...v3.6.0)
+
+### Added
+- Ability to view job details in recent jobs overview ([#751](https://github.com/laravel/horizon/pull/751))
+- Another way for tags displaying & collapsible panels ([#754](https://github.com/laravel/horizon/pull/754))
+
+
+## [v3.5.0 (2020-01-28)](https://github.com/laravel/horizon/compare/v3.4.7...v3.5.0)
+
+### Added
+- Allow Horizon to be used on a subdomain without a subfolder ([#749](https://github.com/laravel/horizon/pull/749))
+
+
+## [v3.4.7 (2020-01-14)](https://github.com/laravel/horizon/compare/v3.4.6...v3.4.7)
+
+### Fixed
+- Revert filtering by tag ([#741](https://github.com/laravel/horizon/pull/741))
+
+
+## [v3.4.6 (2019-12-30)](https://github.com/laravel/horizon/compare/v3.4.5...v3.4.6)
+
+### Changed
+- Reset the retryUntil value ([#736](https://github.com/laravel/horizon/pull/736))
+
+
+## [v3.4.5 (2019-12-23)](https://github.com/laravel/horizon/compare/v3.4.4...v3.4.5)
+
+### Fixed
+- Fix php 7.4 tagged model typed props ([#732](https://github.com/laravel/horizon/pull/732), [025f953](https://github.com/laravel/horizon/commit/025f953b4902a9b0b172e6d5fe19d0809701259e))
+
+### Removed
+- Remove unused functions ([#722](https://github.com/laravel/horizon/pull/722))
+
+
+## [v3.4.4 (2019-12-10)](https://github.com/laravel/horizon/compare/v3.4.3...v3.4.4)
+
+### Fixed
+- Scale to the maxProcesses if timeToClearAll is zero ([#718](https://github.com/laravel/horizon/pull/718))
+- Handle js `phpunserialize` not working with closures ([9c3a75a](https://github.com/laravel/horizon/commit/9c3a75a0f3cc1a2d1805f48c8aab49469cb4ab33))
+
+
+## [v3.4.3 (2019-11-19)](https://github.com/laravel/horizon/compare/v3.4.2...v3.4.3)
+
+### Changed
+- Set default 'tries' to 1 ([#704](https://github.com/laravel/horizon/pull/704))
+
+
+## [v3.4.2 (2019-10-21)](https://github.com/laravel/horizon/compare/v3.4.1...v3.4.2)
+
+### Fixed
+- Prevent 'memory exhausted' when deleting monitored tag ([#690](https://github.com/laravel/horizon/pull/690), [1532f9c](https://github.com/laravel/horizon/commit/1532f9c32d9739a1886357108fe5c4e1dc9b8e78))
+- Set same ttl for tags as same as recent jobs ([#692](https://github.com/laravel/horizon/pull/692))
+
+
+## [v3.4.1 (2019-10-08)](https://github.com/laravel/horizon/compare/v3.4.0...v3.4.1)
+
+### Fixed
+- Fix pagination for recent jobs ([#678](https://github.com/laravel/horizon/pull/678))
+
+
+## [v3.4.0 (2019-10-01)](https://github.com/laravel/horizon/compare/v3.3.2...v3.4.0)
+
+### Added
+- Filter recent jobs by tag ([#665](https://github.com/laravel/horizon/pull/665))
+
+
+## [v3.3.2 (2019-08-27)](https://github.com/laravel/horizon/compare/v3.3.1...v3.3.2)
+
+### Fixed
+- Fix worker command binding ([3b53310](https://github.com/laravel/horizon/commit/3b533104caa299761ce6a1c41438bdab1e2e246f))
+
+
+## [v3.3.1 (2019-08-20)](https://github.com/laravel/horizon/compare/v3.3.0...v3.3.1)
+
+### Fixed
+- Fix autobalancer ([#651](https://github.com/laravel/horizon/pull/651))
+
+
+## [v3.3.0 (2019-08-13)](https://github.com/laravel/horizon/compare/v3.2.8...v3.3.0)
+
+### Added
+- Allow custom dashboard failed jobs metric period ([#644](https://github.com/laravel/horizon/pull/644))
+
+
+## [v3.2.8 (2019-08-06)](https://github.com/laravel/horizon/compare/v3.2.7...v3.2.8)
+
+### Fixed
+- Forcing Vue to use the X-Requested-With header, set to XMLHttpRequest ([#642](https://github.com/laravel/horizon/pull/642))
+
+
+## [v3.2.7 (2019-07-30)](https://github.com/laravel/horizon/compare/v3.2.6...v3.2.7)
+
+### Changed
+- Updated version constraints for Laravel 6.0 ([b547cb2](https://github.com/laravel/horizon/commit/b547cb2a3668d3e83a3bc9ecac3aab67873c330c))
+
+
+## [v3.2.6 (2019-07-11)](https://github.com/laravel/horizon/compare/v3.2.5...v3.2.6)
+
+### Fixed
+- Correct dashboard "Failed Jobs Past 7 Days" metric ([#633](https://github.com/laravel/horizon/pull/633))
+
+
+## [v3.2.5 (2019-07-02)](https://github.com/laravel/horizon/compare/v3.2.4...v3.2.5)
+
+### Fixed
+- Adjust auto scaling to always use the max processes ([#627](https://github.com/laravel/horizon/pull/627))
+
+
+## [v3.2.4 (2019-06-25)](https://github.com/laravel/horizon/compare/v3.2.3...v3.2.4)
+
+### Fixed
+- Custom MasterSupervisor name breaks dashboard ([#619](https://github.com/laravel/horizon/pull/619))
+
+
+## [v3.2.3 (2019-06-14)](https://github.com/laravel/horizon/compare/v3.2.2...v3.2.3)
+
+### Fixed
+- Reverted "Display worker CPU and memory utilization in supervisor list" ([#616](https://github.com/laravel/horizon/pull/616), [#614](https://github.com/laravel/horizon/pull/614))
+
+
+## [v3.2.2 (2019-06-04)](https://github.com/laravel/horizon/compare/v3.2.1...v3.2.2)
+
+### Changed
+- Add app name to dashboard ([#605](https://github.com/laravel/horizon/pull/605))
+
+### Fixed
+- Properly format numeric values ([#606](https://github.com/laravel/horizon/pull/606))
+
+
+## [v3.2.1 (2019-05-21)](https://github.com/laravel/horizon/compare/v3.2.0...v3.2.1)
+
+### Fixed
+- Compiled assets ([1dcbb96](https://github.com/laravel/horizon/commit/1dcbb96a5aa1dd7c4e55017782ce981b2f296223))
+
+
+## [v3.2.0 (2019-05-21)](https://github.com/laravel/horizon/compare/v3.1.2...v3.2.0)
+
+### Added
+- Display worker CPU and memory utilization in supervisor list ([#589](https://github.com/laravel/horizon/pull/589))
+
+### Fixed
+- Fix for missing first failed job when searching ([#593](https://github.com/laravel/horizon/pull/593))
+- Switch to browser timezone ([8ee690a](https://github.com/laravel/horizon/commit/8ee690a763bd4473398a4ff7a303eb5a5a712fdd), [c7a4739](https://github.com/laravel/horizon/commit/c7a4739ba9f2bc89326eba1088e91e16916f8812))
+
+
+## [v3.1.2 (2019-04-30)](https://github.com/laravel/horizon/compare/v3.1.1...v3.1.2)
+
+### Fixed
+- Fix false jobs causing front-end not to display them ([#582](https://github.com/laravel/horizon/pull/582))
 
 
 ## [v3.1.1 (2019-04-02)](https://github.com/laravel/horizon/compare/v3.1.0...v3.1.1)
@@ -9,7 +185,7 @@
 - Fix failed jobs retrying ([7d28272](https://github.com/laravel/horizon/commit/7d282723792f3dd6d058b8d7b87a18350635c029))
 
 
-## [v3.1.0](https://github.com/laravel/horizon/compare/v3.0.6...v3.1.0)
+## [v3.1.0 (2019-03-26)](https://github.com/laravel/horizon/compare/v3.0.6...v3.1.0)
 
 ### Added
 - Add support for Supervisor "nice" option ([#551](https://github.com/laravel/horizon/pull/551), [8d0034b](https://github.com/laravel/horizon/commit/8d0034bd6d72450be8cdba8e874656d3e704306d), [#556](https://github.com/laravel/horizon/pull/556))

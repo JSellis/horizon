@@ -2,10 +2,10 @@
 
 namespace Laravel\Horizon;
 
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Queue\QueueManager;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Events\Dispatcher;
 use Laravel\Horizon\Connectors\RedisConnector;
 
 class HorizonServiceProvider extends ServiceProvider
@@ -105,6 +105,10 @@ class HorizonServiceProvider extends ServiceProvider
             define('HORIZON_PATH', realpath(__DIR__.'/../'));
         }
 
+        $this->app->bind(Console\WorkCommand::class, function ($app) {
+            return new Console\WorkCommand($app['queue.worker'], $app['cache.store']);
+        });
+
         $this->configure();
         $this->offerPublishing();
         $this->registerServices();
@@ -123,7 +127,7 @@ class HorizonServiceProvider extends ServiceProvider
             __DIR__.'/../config/horizon.php', 'horizon'
         );
 
-        Horizon::use(config('horizon.use'));
+        Horizon::use(config('horizon.use', 'default'));
     }
 
     /**

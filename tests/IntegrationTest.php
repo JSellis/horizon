@@ -2,14 +2,14 @@
 
 namespace Laravel\Horizon\Tests;
 
-use Laravel\Horizon\Horizon;
-use Orchestra\Testbench\TestCase;
 use Illuminate\Queue\WorkerOptions;
 use Illuminate\Support\Facades\Redis;
-use Laravel\Horizon\WorkerCommandString;
 use Laravel\Horizon\Contracts\JobRepository;
 use Laravel\Horizon\Contracts\TagRepository;
+use Laravel\Horizon\Horizon;
 use Laravel\Horizon\SupervisorCommandString;
+use Laravel\Horizon\WorkerCommandString;
+use Orchestra\Testbench\TestCase;
 
 abstract class IntegrationTest extends TestCase
 {
@@ -32,12 +32,12 @@ abstract class IntegrationTest extends TestCase
      */
     protected function tearDown(): void
     {
+        parent::tearDown();
+
         Redis::flushall();
         WorkerCommandString::reset();
         SupervisorCommandString::reset();
         Horizon::$authUsing = null;
-
-        parent::tearDown();
     }
 
     /**

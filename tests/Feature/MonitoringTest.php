@@ -2,12 +2,12 @@
 
 namespace Laravel\Horizon\Tests\Feature;
 
-use Laravel\Horizon\Jobs\MonitorTag;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Redis;
-use Laravel\Horizon\Tests\IntegrationTest;
-use Laravel\Horizon\Jobs\StopMonitoringTag;
 use Laravel\Horizon\Contracts\TagRepository;
+use Laravel\Horizon\Jobs\MonitorTag;
+use Laravel\Horizon\Jobs\StopMonitoringTag;
+use Laravel\Horizon\Tests\IntegrationTest;
 
 class MonitoringTest extends IntegrationTest
 {
@@ -61,6 +61,20 @@ class MonitoringTest extends IntegrationTest
         dispatch(new MonitorTag('first'));
         Queue::push(new Jobs\BasicJob);
         $this->work();
+        dispatch(new StopMonitoringTag('first'));
+        $this->assertEquals(0, $this->monitoredJobs('first'));
+    }
+
+    public function test_all_completed_jobs_are_removed_from_database_when_their_tag_is_no_longer_monitored()
+    {
+        dispatch(new MonitorTag('first'));
+
+        for ($i = 0; $i < 80; $i++) {
+            Queue::push(new Jobs\BasicJob);
+        }
+
+        $this->work();
+
         dispatch(new StopMonitoringTag('first'));
         $this->assertEquals(0, $this->monitoredJobs('first'));
     }
